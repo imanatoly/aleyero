@@ -13,7 +13,7 @@
 	<div class="row">
 		<div class="col-md-8" >
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h1><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 			<?php the_content(); ?>
 
@@ -27,12 +27,9 @@
 				<li class="next"><?php next_post_link(' %link', ' %title  &rarr;') ?></li>
 			  </ul>
 			</nav>
-			<div class="nav">
-
-			</div>
 
 			<?php endwhile; endif; ?>
-		</div>
+		</article>
 
 		</div>
 		<div class="col-md-4">

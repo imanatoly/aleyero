@@ -4,7 +4,6 @@
 
      <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; 
      charset=<?php bloginfo('charset'); ?>" />	
-     <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> 
      <!-- leave this for stats please -->
 
      <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
@@ -23,17 +22,5 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/assets/css/site.css"/>
 
-
-    <meta property="og:image" th:content="${config.site_host}+${content.image}"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:site_name" content="Aloe Vera Network"/>
-    <meta property="og:url" th:content="${config.site_host}+'/'+${content.uri}"/>
-    <meta property="og:title" th:content="${content.title}"/>
-    <meta property="og:description" th:content="${content.description}"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@lretcetera"/>
-    <meta name="twitter:title" content="Aloe Vera Network"/>
-    <meta name="twitter:description" th:content="${content.description}"/>
-    <meta name="twitter:image:src" th:content="${config.site_host}+${content.image}"/>
 
 </head>

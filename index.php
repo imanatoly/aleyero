@@ -14,13 +14,13 @@
 		<div class="col-md-8" >
 		  	<?php if(have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
 
-			<div class="post" id="post-<?php the_ID(); ?>">
+			<article class="post" id="post-<?php the_ID(); ?>">
 
 			<div class="media">
-              <div class="col-xs-6 col-md-3">
+              <div class="col-xs-12 col-md-3">
 				<?php if ( has_post_thumbnail()) : ?>
 				   <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-				   <?php the_post_thumbnail('medium', ['class' => 'img-responsive', 'title' => '<?php the_title(); ?>']); ?>
+				   <?php the_post_thumbnail('medium', ['class' => 'img-responsive', 'title' => get_the_title()]); ?>
 				   </a>
 				 <?php endif; ?>
 			  </div>
@@ -29,16 +29,17 @@
                 <h2 class="media-heading"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 					<?php the_excerpt(); ?>
               </div>
-                          <div class="top-buffer">
-              			  </div>
             </div>
 
-			</div>
+			</article>
 			<?php endwhile; ?>
 
-			<div class="navigation">
-				<?php posts_nav_link(); ?>
-			</div>
+			<nav aria-label="sıradaki yazılar">
+				<ul class="pager">
+					<li class="previous"><?php previous_posts_link( '&laquo; Önceki sayfa' ); ?></li>
+					<li class="next"><?php next_posts_link( 'Sonraki sayfa &raquo;', '' ); ?></li>
+				</ul>
+			</nav>
 
 			<?php endif; ?>
 
